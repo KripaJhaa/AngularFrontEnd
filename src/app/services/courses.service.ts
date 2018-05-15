@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Course } from '../Course';
+import { Course } from '../Models/Course';
 
 
 
@@ -19,4 +19,7 @@ export class CoursesService {
     return this.http.get<Course[]>("http://127.0.0.1:8800/courses")
   }
 
+  addCourses (name: string): Observable<Course> {
+    return this.http.post<Course>("http://127.0.0.1:8800/courses?name="+name,name)
+  }
 }

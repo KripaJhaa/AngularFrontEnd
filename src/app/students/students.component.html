@@ -4,3 +4,17 @@
   <input type="text">
   <button class="btn btn-primary">Submit</button>
 </div>
+
+<div style="float: right; margin: 10px">
+    <button class="btn btn-success" (click)="listAllStudents()">Get All Students</button>
+  
+    
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let items of studentList">
+        {{items.name}}
+      </li>
+    </ul>
+  
+  
+  
+  </div>

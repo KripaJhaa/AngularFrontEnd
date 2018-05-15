@@ -2,9 +2,22 @@
 <div>
   <p>Enter Courses</p>
   <input type="text" #inp>
-  <button class="btn btn-primary" (click)="addCourse(inp.value)">Submit</button>
+  <button class="btn btn-primary" (click)="addCourses(inp.value)">Submit</button>
+
+
+
 </div>
 
 <div style="float: right; margin: 10px">
   <button class="btn btn-success" (click)="listAllCourses()">Get All Courses</button>
+
+  
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let items of coursesList">
+      {{items.name}}
+    </li>
+  </ul>
+
+
+
 </div>

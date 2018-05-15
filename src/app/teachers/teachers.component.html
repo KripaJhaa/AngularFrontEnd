@@ -1,3 +1,14 @@
-<p>
-  teachers works!
-</p>
+
+<div style="float: right; margin: 10px">
+    <button class="btn btn-success" (click)="listAllTeachers()">Get All Teachers</button>
+  
+    
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let items of teachersList">
+        {{items.name}}
+      </li>
+    </ul>
+  
+  
+  
+  </div>

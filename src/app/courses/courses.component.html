@@ -1,23 +1,33 @@
-<h3>Courses</h3>
-<div>
+<div class="container">
+  <h3>Courses</h3>
   <p>Enter Courses</p>
   <input type="text" #inp>
-  <button class="btn btn-primary" (click)="addCourses(inp.value)">Submit</button>
+  <button class="btn btn-primary -m" (click)="addCourses(inp.value)">Submit</button>
+
+  <div class="container">
 
 
+    <div class="jumbotron">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" (click)="listAllCourses()" type="button" data-toggle="dropdown">Get All Courses
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="list-group-item" *ngFor="let items of coursesList" (click)="selected(items.id)">
+            {{items.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
 
-</div>
+    <div style="float: right">
+        <label>Enter Course Id </label>&nbsp;
+        <input type="text" #inp1>
+        <button class="btn-primary" (click)="seeBatch(inp1.value)">See Batches</button>
+      </div>
 
-<div style="float: right; margin: 10px">
-  <button class="btn btn-success" (click)="listAllCourses()">Get All Courses</button>
+      <ul class="list-group">
+          <li class="list-group-item" *ngFor="let items of batchList">{{items.name}}</li>
+        </ul>
 
-  
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let items of coursesList">
-      {{items.name}}
-    </li>
-  </ul>
-
-
-
-</div>
+  </div>

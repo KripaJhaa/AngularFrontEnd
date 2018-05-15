@@ -1,11 +1,12 @@
-<p>
-  subjects works!
-</p>
 
 
-<div style="float: right; margin: 10px">
+<div  class="container">
+    <h3>Subjects</h3>
+  <p>Enter subjects</p>
+  <input type="text" #inp>
+  <button class="btn btn-primary" (click)="addSubjects(inp.value)">Submit</button>
+
     <button class="btn btn-success" (click)="listAllSubjects()">Get All Students</button>
-  
     
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let items of subjectList">

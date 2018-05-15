@@ -15,4 +15,8 @@ export class StudentsService {
   getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>("http://127.0.0.1:8800/students")
   }
+
+  addStudents(name: string): Observable<Student> {
+    return this.http.post<Student>("http://127.0.0.1:8800/students?name="+name,name)
+  }
 }

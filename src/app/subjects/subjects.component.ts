@@ -23,4 +23,11 @@ export class SubjectsComponent implements OnInit {
     })
   }
 
+
+  addSubjects(name:string){
+    this.subjectService.addSubjects(name).subscribe((b)=>{  
+      alert("Added")
+    })  
+  }
+
 }

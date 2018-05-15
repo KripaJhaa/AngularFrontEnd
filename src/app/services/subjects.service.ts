@@ -15,4 +15,10 @@ export class SubjectsService {
   getSubjects(): Observable<Subject[]> {
     return this.http.get<Subject[]>("http://127.0.0.1:8800/subjects")
   }
+
+
+  addSubjects(name: string): Observable<Subject> {
+    return this.http.post<Subject>("http://127.0.0.1:8800/subjects?name="+name,name)
+  }
+
 }

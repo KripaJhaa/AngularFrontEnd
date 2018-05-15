@@ -20,7 +20,14 @@ export class StudentsComponent implements OnInit {
     this.studentService.getStudents().subscribe((students) => {
       console.log(students)
       this.studentList = students
-    })
+    })}
+
+    addStudents(name:string){
+      this.studentService.addStudents(name).subscribe((b)=>{  
+        alert("Added")
+      })  
+    }
+
   }
 
-}
+
